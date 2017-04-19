@@ -1,0 +1,24 @@
+Group
+1. Group Collection 
+2. Update Group (group id, members_count)
+3. Save - if was made changes or called Update 
+
+user
+1. getUsers -  Collection
+2. getUsers -  Collection (group id)
+3. getSortUsers - Collection (gtoup id)
+4. updateUser - boolean (user id)
+5. getUserLink - link (user id)
+6. updateUserGroups - (user id, group id)
+7. Save - if was wade changes create new file and delete old.
+
+
+
+
+File Utils
+
+1. open groups file
+2. open users file
+3. save groups file on program close
+4. save users file on program close
+5. backup last old file

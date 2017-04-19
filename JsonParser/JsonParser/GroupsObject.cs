@@ -8,6 +8,7 @@ namespace JsonParser
 {
     class GroupsObject
     {
-        public List<Group> Groups { get; set;}
+       //TODO delete from github
+       // public List<Group> Groups { get; set;}
     }
 }

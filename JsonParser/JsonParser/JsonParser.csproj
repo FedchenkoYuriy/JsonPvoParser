@@ -49,11 +49,13 @@
   <ItemGroup>
     <Compile Include="FileUtils.cs" />
     <Compile Include="Group.cs" />
+    <Compile Include="GroupSingleton.cs" />
     <Compile Include="GroupsObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PVObject.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserSingleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

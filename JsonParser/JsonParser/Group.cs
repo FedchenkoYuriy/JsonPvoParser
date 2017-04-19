@@ -14,38 +14,12 @@ namespace JsonParser
         public string GroupId { get; set; }
         [JsonProperty("name")]
         public string GroupName { get; set; }
-        [JsonProperty("is_closed ")]
-        public string IsClosed { get; set; }
+        
         [JsonProperty("members_count")]
         public string NumberOfUsers { get; set; }
-        [JsonProperty("users")]
-        public List<User> Users { get; set; }
+        //[JsonProperty("users")]
+        //public List<User> Users { get; set; }
 
-
-        public string getId ()
-        {
-            return GroupId;
-        }
-
-        public string getName()
-        {
-            return GroupName;
-        }
-
-        public string getStatus()
-        {
-            return IsClosed;
-        }
-
-        public string getUserAmoount()
-        {
-            return NumberOfUsers;
-        }
-
-        public List<User> getUsers()
-        {
-            return Users;
-        }
         
         public bool updateGroup()
         {
@@ -58,5 +32,11 @@ namespace JsonParser
             //TODO add prototype realise
             return true;
         }
+    }
+
+    class GroupWrapper
+    {
+        [JsonProperty(PropertyName = "groups")]
+        public List<Group> GroupCollection { get; set; }
     }
 }

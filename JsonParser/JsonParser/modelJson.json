@@ -1,0 +1,38 @@
+{
+    "gid" : 123456,
+    "name" : "group name",
+    "members_count" : 123,
+    "update" : "2009-02-15T00:00:00Z",
+    "users" : [
+         {
+            "uid" : 1235,
+            "first_name" : "name",
+            "last_name" : "surname",
+            "added" : "2009-02-15T00:00:00Z",
+            "pv_status" : 1,
+            "groups" : [
+              12345, 12356, 12356
+              ]
+         },
+         {
+            "uid" : 1235,
+            "first_name" : "name",
+            "last_name" : "surname",
+            "added" : "2009-02-15T00:00:00Z",
+            "pv_status" : 1,
+            "groups" : [
+              12345, 12356, 12356
+              ]
+         }, 
+         {
+            "uid" : 1235,
+            "first_name" : "name",
+            "last_name" : "surname",
+            "added" : "2009-02-15T00:00:00Z",
+            "pv_status" : 1,
+            "groups" : [
+              12345, 12356, 12356
+              ]
+         }
+      ]
+}

@@ -2,6 +2,7 @@ Group
 1. Group Collection 
 2. Update Group (group id, members_count)
 3. Save - if was made changes or called Update 
+4. addGroup - group id
 
 user
 1. getUsers -  Collection
@@ -11,6 +12,7 @@ user
 5. getUserLink - link (user id)
 6. updateUserGroups - (user id, group id)
 7. Save - if was wade changes create new file and delete old.
+8. addUsers(Collection<User>, group id)
 
 
 

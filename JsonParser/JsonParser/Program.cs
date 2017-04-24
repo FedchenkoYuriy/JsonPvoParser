@@ -10,6 +10,10 @@ namespace JsonParser
     {
         static void Main(string[] args)
         {
+            FileUtils file = new FileUtils();
+            string test = file.readUsers();
+            Console.WriteLine(test);
+            Console.Read();
         }
     }
 }

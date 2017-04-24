@@ -1,3 +1,10 @@
 c:\users\user\documents\visual studio 2015\Projects\JsonParser\JsonParser\bin\Debug\JsonParser.exe.config
 c:\users\user\documents\visual studio 2015\Projects\JsonParser\JsonParser\obj\Debug\JsonParser.csprojResolveAssemblyReference.cache
 C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\JsonParser.exe.config
+C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\obj\Debug\JsonParser.csprojResolveAssemblyReference.cache
+C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\JsonParser.exe
+C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\JsonParser.pdb
+C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\Newtonsoft.Json.dll
+C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\Newtonsoft.Json.xml
+C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\obj\Debug\JsonParser.exe
+C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\obj\Debug\JsonParser.pdb

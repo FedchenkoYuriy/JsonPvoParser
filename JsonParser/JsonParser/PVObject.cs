@@ -11,30 +11,30 @@ namespace JsonParser
     {
         private GroupsObject groups;
         private List<Group> groupList;
-        public PVObject (string json)
-        {
-            groups = JsonConvert.DeserializeObject<GroupsObject>(json);
-            groupList = groups.Groups;
-        }
+        //public PVObject (string json)
+        //{
+        //    groups = JsonConvert.DeserializeObject<GroupsObject>(json);
+        //    groupList = groups.Groups;
+        //}
 
-        public Group getGroup(int id)
-        {
-           //TODO realise chosing algorithm
-        }
-        public List<Group> getAllGroups()
-        {
-            //TODO realise singleton
-        }
+        //public Group getGroup(int id)
+        //{
+        //   //TODO realise chosing algorithm
+        //}
+        //public List<Group> getAllGroups()
+        //{
+        //    //TODO realise singleton
+        //}
 
-        public User getUser(int id)
-        {
-            //TODO realise chosing algorithm
-        }
+        //public User getUser(int id)
+        //{
+        //    //TODO realise chosing algorithm
+        //}
 
-        public List<User> getAllUsers()
-        {
-            //TODO realise singleton
-        }
+        //public List<User> getAllUsers()
+        //{
+        //    //TODO realise singleton
+        //}
         
 
     }

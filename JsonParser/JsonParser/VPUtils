@@ -24,3 +24,6 @@ File Utils
 3. save groups file on program close
 4. save users file on program close
 5. backup last old file
+
+
+Добавить интерфейс IGroupRepo и IUserRepo в нем реализовать обработку методов

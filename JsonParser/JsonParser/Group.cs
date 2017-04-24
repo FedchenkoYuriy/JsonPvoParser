@@ -8,35 +8,19 @@ using System.Threading.Tasks;
 
 namespace JsonParser
 {
-    class Group
+    public class Group
     {
         [JsonProperty("gid")]
         public string GroupId { get; set; }
         [JsonProperty("name")]
-        public string GroupName { get; set; }
-        
+        public string GroupName { get; set; }        
         [JsonProperty("members_count")]
         public string NumberOfUsers { get; set; }
-        //[JsonProperty("users")]
-        //public List<User> Users { get; set; }
-
-        
-        public bool updateGroup()
-        {
-            //TODO add prototype realise
-            return true;
-        }
-
-        public bool SaveGroup()
-        {
-            //TODO add prototype realise
-            return true;
-        }
     }
 
     class GroupWrapper
     {
         [JsonProperty(PropertyName = "groups")]
-        public List<Group> GroupCollection { get; set; }
+        public IEnumerable<Group> Groups { get; set; }
     }
 }

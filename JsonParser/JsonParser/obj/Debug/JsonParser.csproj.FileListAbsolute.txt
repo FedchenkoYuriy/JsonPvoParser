@@ -8,3 +8,6 @@ C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\Newtons
 C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\Newtonsoft.Json.xml
 C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\obj\Debug\JsonParser.exe
 C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\obj\Debug\JsonParser.pdb
+D:\GITREPO\jsonparser\JsonPvoParser\JsonPvoParser\JsonParser\JsonParser\bin\Debug\JsonParser.exe.config
+D:\GITREPO\jsonparser\JsonPvoParser\JsonPvoParser\JsonParser\JsonParser\obj\Debug\JsonParser.exe
+D:\GITREPO\jsonparser\JsonPvoParser\JsonPvoParser\JsonParser\JsonParser\obj\Debug\JsonParser.pdb

@@ -8,7 +8,7 @@ using Newtonsoft.Json.Linq;
 
 namespace JsonParser
 {
-    class User
+    public class User
     {
         [JsonProperty("uid")]
         public string UserId { get; set; }

@@ -1,13 +1,13 @@
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace JsonParser
 {
-    interface IGroupRepository<Group>
-    {		
-		IEnumerable<Group> GetGroups();		
-		Group GetUser(int groupId);
-		void AddGroup(Group user);				
-		void UpdateGroup(Group group);
-	}
+    public interface IGroupRepository
+    {
+        IEnumerable<Group> GetGroups();
+        Group GetGroup(string groupId);
+        void AddGroup(Group group);
+        void UpdateGroup(Group group);
+    }
 }

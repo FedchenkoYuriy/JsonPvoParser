@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace JsonParser
 {
-    class FileUtils
-
+    public class FileUtils
     {
+
 
         //Groups
         public string readGroups()

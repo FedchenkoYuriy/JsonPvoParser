@@ -7,12 +7,10 @@ using System.IO;
 
 namespace JsonParser
 {
-    public class FileUtils
+    public static class FileUtils
     {
-
-
         //Groups
-        public IEnumerable<Group> ReadGroups()
+        public static IEnumerable<Group> ReadGroups()
         {
             var groups = new List<Group>();
 
@@ -49,7 +47,7 @@ namespace JsonParser
 
 
         //todo use JObject to convrt to json
-        public void SaveGroups(string newGroupFile)
+        public static void SaveGroups(string newGroupFile)
         {
             try
             {
@@ -67,7 +65,7 @@ namespace JsonParser
 
 
         //Users
-        public IEnumerable<User> ReadUsers()
+        public static IEnumerable<User> ReadUsers()
         {
             var users = new List<User>();
 

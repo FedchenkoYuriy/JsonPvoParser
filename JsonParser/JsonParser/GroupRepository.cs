@@ -13,13 +13,11 @@ namespace JsonParser
     {
         private static GroupRepository _instace;
         private static object _syncRoot;
-        private static ObservableCollection<Group> _groups;        
-
-        private FileUtils FileUtils { get; set; }
+        private static Dictionary<int, Group> _groups;              
 
         private GroupRepository()
         {
-            _groups = new ObservableCollection<Group>();
+            _groups = new Dictionary<int, Group>();
             LoadGroups();
         }
 
@@ -42,18 +40,17 @@ namespace JsonParser
         private void LoadGroups()
         {
             if (_groups.Count == 0)
-            {                
-                FileUtils = new FileUtils();                        
+            {                                
                 try
                 {                    
                     foreach (var group in FileUtils.ReadGroups())
                     {                        
-                        _groups.Add(group);
+                        _groups.Add(group.GroupId, group);
                     }
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("get groups" +  e);
+                    Console.WriteLine("Load Groups" +  e);
                     Console.ReadKey();
                     throw;
                 }
@@ -62,27 +59,37 @@ namespace JsonParser
 
         public IEnumerable<Group> GetGroups()
         {            
-            return _groups;
+            return _groups.Values;
         }
 
         public Group GetGroup(int groupId)
         {
-            return _groups.First(x => x.GroupId == groupId);
+            if (_groups.ContainsKey(groupId))
+            {
+                return _groups[groupId];
+            }
+
+            return null;
         }
 
         public void AddGroup(Group group)
         {
-            _groups.Add(group);
+            if (_groups.ContainsKey(group.GroupId))
+            {
+                Console.WriteLine("Already exist: " + _groups[group.GroupId]);
+                UpdateGroup(group);
+            }
+            else
+            {
+                _groups.Add(group.GroupId, group);
+            }            
         }
 
         public void UpdateGroup(Group group)
         {
-            var item = _groups.First(x => x.GroupId == group.GroupId);
-
-            if (item.NumberOfUsers != group.NumberOfUsers)
+            if (_groups.ContainsKey(group.GroupId))
             {
-                item.GroupName = group.GroupName;
-                item.NumberOfUsers = group.NumberOfUsers;                
+                _groups[group.GroupId] = group;
             }            
         }
     }

@@ -11,17 +11,16 @@ namespace JsonParser
 {
     class GroupRepository : IGroupRepository
     {
-        private static GroupRepository _Instace;
+        private static GroupRepository _instace;
         private static object _syncRoot;
-        private static ObservableCollection<Group> _groups;
-        private GroupWrapper _groupWrapper;
+        private static ObservableCollection<Group> _groups;        
 
         private FileUtils FileUtils { get; set; }
 
         private GroupRepository()
         {
             _groups = new ObservableCollection<Group>();
-            getGroups();
+            LoadGroups();
         }
 
 
@@ -29,36 +28,44 @@ namespace JsonParser
         {
             _syncRoot = new object();
 
-            if (_Instace == null)
+            if (_instace == null)
             {
                 lock (_syncRoot)
                 {
-                    if (_Instace == null)
-                        _Instace = new GroupRepository();
+                    if (_instace == null)
+                        _instace = new GroupRepository();
                 }
             }
-            return _Instace;
+            return _instace;
         }
 
-        private void getGroups()
+        private void LoadGroups()
         {
-            if (_groups == null)
+            if (_groups.Count == 0)
             {                
-                FileUtils = new FileUtils();
-                _groupWrapper = JsonConvert.DeserializeObject<GroupWrapper>(FileUtils.readGroups());
-                foreach (var group in _groupWrapper.Groups)
+                FileUtils = new FileUtils();                        
+                try
                 {                    
-                        _groups.Add(group);                                                        
-                }                    
+                    foreach (var group in FileUtils.ReadGroups())
+                    {                        
+                        _groups.Add(group);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("get groups" +  e);
+                    Console.ReadKey();
+                    throw;
+                }
             }            
         }
 
         public IEnumerable<Group> GetGroups()
-        {
+        {            
             return _groups;
         }
 
-        public Group GetGroup(string groupId)
+        public Group GetGroup(int groupId)
         {
             return _groups.First(x => x.GroupId == groupId);
         }
@@ -68,15 +75,14 @@ namespace JsonParser
             _groups.Add(group);
         }
 
-        public void UpdateGroup(Group @group)
+        public void UpdateGroup(Group group)
         {
             var item = _groups.First(x => x.GroupId == group.GroupId);
 
             if (item.NumberOfUsers != group.NumberOfUsers)
             {
                 item.GroupName = group.GroupName;
-                item.NumberOfUsers = group.NumberOfUsers;
-                // todo add users to user list
+                item.NumberOfUsers = group.NumberOfUsers;                
             }            
         }
     }

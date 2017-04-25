@@ -16,25 +16,36 @@ namespace JsonParser
         public string FirstName { get; set; }
         [JsonProperty("last_name ")]
         public string LastName { get; set; }
-        [JsonProperty("pw_write")]
-        public bool PwWrite { get; set; }
-        public DateTime addedDate { get; set; }
-        public List<string> userGroups { get; set; }
+        [JsonProperty("pv_status")]
+        public bool PVStatus { get; set; }
+        [JsonProperty("added")]
+        public DateTime Added { get; set; }
+        [JsonProperty("groups")]
+        public List<int> UserGroups { get; set; }
 
-
-
-
-        public bool updateUser()
+        public override string ToString()
         {
-            //TODO: add prototype realise
-            return true;
-        }
+            return "#############"
+                   + "\nUID: " + UserId
+                   + "\nFirst Name: " + FirstName
+                   + "\nLast Name: " + LastName
+                   + "\nPVStatus: " + PVStatus
+                   + "\nAdded: " + Added
+                   + "\nUser Groups: " + UserGroups;
+        }    
 
+//
+//        public bool updateUser()
+//        {
+//            //TODO: add prototype realise
+//            return true;
+//        }
+//
     }
-
-    class UserWrapper 
-    {
-        [JsonProperty(PropertyName = "users")]
-        public List<User> UserCollection { get; set; }
-    }
+//
+//    class UserWrapper 
+//    {
+//        [JsonProperty(PropertyName = "users")]
+//        public List<User> UserCollection { get; set; }
+//    }
 }

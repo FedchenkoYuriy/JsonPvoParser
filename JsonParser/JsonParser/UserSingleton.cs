@@ -12,13 +12,13 @@ namespace JsonParser
     {
             private static UserSingleton userInstance;
 
-            public UserWrapper Users { get; private set; }
+            //public UserWrapper Users { get; private set; }
             private static object syncRoot = new Object();
 
             protected UserSingleton(string json)
             {
             //this.Users = ;
-            Users = JsonConvert.DeserializeObject<UserWrapper>(json);
+            //Users = JsonConvert.DeserializeObject<UserWrapper>(json);
             }
 
             public static UserSingleton getInstance(string name)

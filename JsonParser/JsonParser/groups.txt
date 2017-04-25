@@ -1,0 +1,34 @@
+﻿{
+    "groups" : [
+         {
+              "gid" : 123,
+              "name" : "group name",
+              "members_count" : 240
+         },
+         {
+              "gid" : 123,
+              "name" : "group name",
+              "members_count" : 240
+         },
+         {
+              "gid" : 123,
+              "name" : "group name",
+              "members_count" : 240
+         },
+         {
+              "gid" : 123,
+              "name" : "group name",
+              "members_count" : 240
+         },
+         {
+              "gid" : 123,
+              "name" : "group name",
+              "members_count" : 240
+         },
+         {
+              "gid" : 123,
+              "name" : "group name",
+              "members_count" : 240
+         }
+    ]
+}

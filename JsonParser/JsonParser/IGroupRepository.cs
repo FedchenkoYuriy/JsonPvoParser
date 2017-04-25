@@ -6,7 +6,7 @@ namespace JsonParser
     public interface IGroupRepository
     {
         IEnumerable<Group> GetGroups();
-        Group GetGroup(string groupId);
+        Group GetGroup(int groupId);
         void AddGroup(Group group);
         void UpdateGroup(Group group);
     }

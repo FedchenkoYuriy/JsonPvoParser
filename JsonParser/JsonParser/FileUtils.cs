@@ -3,9 +3,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace JsonParser
 {
@@ -14,96 +12,133 @@ namespace JsonParser
 
 
         //Groups
-        public string readGroups()
+        public IEnumerable<Group> ReadGroups()
         {
+            var groups = new List<Group>();
+
             try
             {
-                using (StreamReader sr = new StreamReader("GroupFile.txt"))
+                using (StreamReader sr = new StreamReader("../groups.txt"))
                 {
                     string line = sr.ReadToEnd();
-                    if (IsValidJson(line))
+
+                    try
                     {
-                        return line;
+                        var obj = JObject.Parse(line);
+                        var array = JArray.Parse(obj.GetValue("groups").ToString());
+
+                        foreach (var group in array)
+                        {
+                            groups.Add(JsonConvert.DeserializeObject<Group>(group.ToString()));
+                        }
                     }
-                    return "Fail";
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        throw;
+                    }                                               
                 }
             }
             catch (Exception e)
             {
-                return "Fail";
+                Console.WriteLine(e.ToString());
             }
+
+            return groups;
         }
 
 
-        public void saveGroups(string newGroupFile)
+        //todo use JObject to convrt to json
+        public void SaveGroups(string newGroupFile)
         {
-         
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Public\TestFolder\WriteLines2.txt", true))
+            try
+            {
+                using (StreamWriter file = new StreamWriter("../groups1.txt", true))
                 {
                     file.WriteLine(newGroupFile);
                 }
-            
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }                        
         }
 
 
         //Users
-        public string readUsers()
+        public IEnumerable<User> ReadUsers()
         {
+            var users = new List<User>();
+
             try
             {
-                using (StreamReader sr = new StreamReader(@"C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\UserFile.txt"))
+                using (StreamReader sr = new StreamReader("../users.txt"))
                 {
                     string line = sr.ReadToEnd();
-                    if (IsValidJson(line))
+
+                    try
                     {
-                        return line;
+                        var obj = JObject.Parse(line);
+                        var array = JArray.Parse(obj.GetValue("users").ToString());
+
+                        foreach (var group in array)
+                        {
+                            users.Add(JsonConvert.DeserializeObject<User>(group.ToString()));
+                        }
                     }
-                    return "Fail";
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        throw;
+                    }
                 }
             }
             catch (Exception e)
             {
-                return "Fail";
+                Console.WriteLine(e.ToString());
             }
+
+            return users;
         }
 
 
-        public void saveUsers(string newUserFile)
-        {
+//        public void saveUsers(string newUserFile)
+//        {
+//
+//            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Public\TestFolder\WriteLines2.txt", true))
+//            {
+//                file.WriteLine(newUserFile);
+//            }
+//
+//        }
 
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Public\TestFolder\WriteLines2.txt", true))
-            {
-                file.WriteLine(newUserFile);
-            }
 
-        }
-
-
-        //Checking for json in string
-        private bool IsValidJson(string strInput)
-        {
-            strInput = strInput.Trim();
-            if ((strInput.StartsWith("{") && strInput.EndsWith("}")) || 
-                (strInput.StartsWith("[") && strInput.EndsWith("]"))) 
-            {
-                try
-                {
-                    var obj = JToken.Parse(strInput);
-                    return true;
-                }
-                catch (JsonReaderException jex)
-                {
-                    return false;
-                }
-                catch (Exception ex) 
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
+//        //Checking for json in string
+//        private bool IsValidJson(string strInput)
+//        {
+//            strInput = strInput.Trim();
+//            if ((strInput.StartsWith("{") && strInput.EndsWith("}")) || 
+//                (strInput.StartsWith("[") && strInput.EndsWith("]"))) 
+//            {
+//                try
+//                {
+//                    var obj = JToken.Parse(strInput);
+//                    return true;
+//                }
+//                catch (JsonReaderException jex)
+//                {
+//                    return false;
+//                }
+//                catch (Exception ex) 
+//                {
+//                    return false;
+//                }
+//            }
+//            else
+//            {
+//                return false;
+//            }
+//        }
     }
 }

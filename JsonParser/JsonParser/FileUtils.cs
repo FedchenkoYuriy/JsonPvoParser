@@ -16,7 +16,7 @@ namespace JsonParser
 
             try
             {
-                using (StreamReader sr = new StreamReader("../groups.txt"))
+                using (StreamReader sr = new StreamReader("../groupstest.txt"))
                 {
                     string line = sr.ReadToEnd();
 
@@ -47,21 +47,24 @@ namespace JsonParser
 
 
         //todo use JObject to convrt to json
-        public static void SaveGroups(string newGroupFile)
+        public static void SaveGroups(IEnumerable<Group> groupColection)
         {
             try
             {
-                using (StreamWriter file = new StreamWriter("../groups1.txt", true))
+                using (StreamWriter file = new StreamWriter("../groupstest.txt", false))
                 {
-                    file.WriteLine(newGroupFile);
+                    //file.WriteLine(groupColection);
+                    string output = "{ \"groups\" : " + JsonConvert.SerializeObject(groupColection) + " }";
+                    file.WriteLine(output);
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 throw;
-            }                        
+            }
         }
+
 
 
         //Users
@@ -71,7 +74,7 @@ namespace JsonParser
 
             try
             {
-                using (StreamReader sr = new StreamReader("../users.txt"))
+                using (StreamReader sr = new StreamReader("../userstest.txt"))
                 {
                     string line = sr.ReadToEnd();
 
@@ -101,42 +104,53 @@ namespace JsonParser
         }
 
 
-//        public void saveUsers(string newUserFile)
-//        {
-//
-//            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Public\TestFolder\WriteLines2.txt", true))
-//            {
-//                file.WriteLine(newUserFile);
-//            }
-//
-//        }
+        public static void saveUsers(IEnumerable<User> userColection)
+        {
+
+            try
+            {
+                using (StreamWriter file = new StreamWriter("../userstest.txt", false))
+                {
+                    //file.WriteLine(groupColection);
+                    string output = "{  \"users\" : " + JsonConvert.SerializeObject(userColection) + " }";
+                    file.WriteLine(output);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+
+        }
 
 
-//        //Checking for json in string
-//        private bool IsValidJson(string strInput)
-//        {
-//            strInput = strInput.Trim();
-//            if ((strInput.StartsWith("{") && strInput.EndsWith("}")) || 
-//                (strInput.StartsWith("[") && strInput.EndsWith("]"))) 
-//            {
-//                try
-//                {
-//                    var obj = JToken.Parse(strInput);
-//                    return true;
-//                }
-//                catch (JsonReaderException jex)
-//                {
-//                    return false;
-//                }
-//                catch (Exception ex) 
-//                {
-//                    return false;
-//                }
-//            }
-//            else
-//            {
-//                return false;
-//            }
-//        }
+
+        //        //Checking for json in string
+        //        private bool IsValidJson(string strInput)
+        //        {
+        //            strInput = strInput.Trim();
+        //            if ((strInput.StartsWith("{") && strInput.EndsWith("}")) || 
+        //                (strInput.StartsWith("[") && strInput.EndsWith("]"))) 
+        //            {
+        //                try
+        //                {
+        //                    var obj = JToken.Parse(strInput);
+        //                    return true;
+        //                }
+        //                catch (JsonReaderException jex)
+        //                {
+        //                    return false;
+        //                }
+        //                catch (Exception ex) 
+        //                {
+        //                    return false;
+        //                }
+        //            }
+        //            else
+        //            {
+        //                return false;
+        //            }
+        //        }
     }
 }

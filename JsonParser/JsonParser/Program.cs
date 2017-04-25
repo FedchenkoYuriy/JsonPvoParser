@@ -19,7 +19,7 @@ namespace JsonParser
 
             GroupRepository.GetInstance().AddGroup(new Group
             {
-                GroupId = 333,
+                GroupId = 355,
                 GroupName = "New Group",
                 NumberOfUsers = 12
             });
@@ -33,9 +33,15 @@ namespace JsonParser
                 GroupId = 333,
                 GroupName = "New Group 233",
                 NumberOfUsers = 12
-            }); 
+            });
 
-//            Console.WriteLine(GroupRepository.GetInstance().GetGroup(333));    
+            FileUtils.SaveGroups(groups);
+
+            var users = UserRepository.GetInstance().GetUsers();
+
+            FileUtils.saveUsers(users);
+
+            //            Console.WriteLine(GroupRepository.GetInstance().GetGroup(333));    
 
 
             //var users = UserRepository.GetInstance().GetUsers();

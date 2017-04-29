@@ -95,8 +95,23 @@ namespace JsonParser
         }
 
         public void UpdateUser(User user)
-        {
-            throw new NotImplementedException();
+        {            
+
+            if (_users.Keys.Contains(user.UserId))
+            {                
+                _users[user.UserId].FirstName = user.FirstName;
+                _users[user.UserId].LastName = user.LastName;
+                _users[user.UserId].PVStatus = user.PVStatus;
+                _users[user.UserId].Added = user.Added;
+
+                foreach (var groupId in user.UserGroups)
+                {                    
+                    if (!_users[user.UserId].UserGroups.Contains(groupId))
+                    {                        
+                        _users[user.UserId].UserGroups.Add(groupId);
+                    }                                        
+                }
+            }     
         }
     }
 }

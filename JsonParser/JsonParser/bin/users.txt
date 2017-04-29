@@ -1,7 +1,7 @@
-﻿{
+{
     "users" : [
          {
-            "uid" : 1,
+            "uid" : 1001,
             "first_name" : "name 1",
             "last_name" : "surname 1",
             "added" : "2009-02-15T00:00:00Z",
@@ -10,7 +10,7 @@
               12345, 12356, 12356
               ]
          },{
-            "uid" : 2,
+            "uid" : 1002,
             "first_name" : "name 2",
             "last_name" : "surname 3",
             "added" : "2009-02-15T00:00:00Z",
@@ -19,7 +19,7 @@
               12345
               ]
          },         {
-            "uid" : 4,
+            "uid" : 1003,
             "first_name" : "name 1",
             "last_name" : "surname 1",
             "added" : "2009-02-15T00:00:00Z",
@@ -28,7 +28,7 @@
               12345, 12356, 12356
               ]
          },{
-            "uid" : 5,
+            "uid" : 1004,
             "first_name" : "name 2",
             "last_name" : "surname 3",
             "added" : "2009-02-15T00:00:00Z",
@@ -37,7 +37,7 @@
               12345
               ]
          },         {
-            "uid" : 3,
+            "uid" : 1005,
             "first_name" : "name 3",
             "last_name" : "surname 3",
             "added" : "2009-02-15T00:00:00Z",
@@ -46,7 +46,7 @@
               12345, 12356, 12356
               ]
          },{
-            "uid" : 6,
+            "uid" : 1006,
             "first_name" : "name 4",
             "last_name" : "surname 4",
             "added" : "2009-02-15T00:00:00Z",

@@ -21,17 +21,22 @@ namespace JsonParser
         [JsonProperty("added")]
         public DateTime Added { get; set; }
         [JsonProperty("groups")]
-        public List<int> UserGroups { get; set; }
+        public HashSet<int> UserGroups { get; set; }
 
         public override string ToString()
         {
-            return "#############"
-                   + "\nUID: " + UserId
-                   + "\nFirst Name: " + FirstName
-                   + "\nLast Name: " + LastName
-                   + "\nPVStatus: " + PVStatus
-                   + "\nAdded: " + Added
-                   + "\nUser Groups: " + UserGroups;
+            var str = "#############"
+                      + "\nUID: " + UserId
+                      + "\nFirst Name: " + FirstName
+                      + "\nLast Name: " + LastName
+                      + "\nPVStatus: " + PVStatus
+                      + "\nAdded: " + Added + "\n";
+            foreach (var group in UserGroups)
+            {
+                str += "grp: " + group + "\n";
+            }
+
+            return str;
         }    
 
 //

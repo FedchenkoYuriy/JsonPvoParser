@@ -13,33 +13,45 @@ namespace JsonParser
         static void Main(string[] args)
         {
 
-            var groups = GroupRepository.GetInstance().GetGroups();
-
-            Console.WriteLine("Get groups was called: " + groups.Count());
-
-            GroupRepository.GetInstance().AddGroup(new Group
-            {
-                GroupId = 355,
-                GroupName = "New Group",
-                NumberOfUsers = 12
-            });
-
-
-
-            Console.WriteLine("Get groups was called: " + groups.Count());
-
-            GroupRepository.GetInstance().AddGroup(new Group
-            {
-                GroupId = 333,
-                GroupName = "New Group 233",
-                NumberOfUsers = 12
-            });
-
-            FileUtils.SaveGroups(groups);
-
             var users = UserRepository.GetInstance().GetUsers();
+/**
+            foreach (var user in users)
+            {
+                Console.WriteLine("Users: " + user);
+            }
+    **/
+            UserRepository.GetInstance().UpdateUser(new User
+            {
+                UserId = 1001,
+                FirstName = "update 1",
+                LastName = "update 2",
+                Added = new DateTime(),
+                PVStatus = true,
+                UserGroups = new HashSet<int>
+                {
+                    1111, 2222, 3333, 4444, 12345, 12356
+                }
+            });
 
-            FileUtils.saveUsers(users);
+            foreach (var user in users)
+            {
+                Console.WriteLine("Users: " + user);
+            }
+
+            
+            //            var groups = GroupRepository.GetInstance().GetGroups();
+            //
+            //            Console.WriteLine("Get groups was called: " + groups.Count());
+            //
+            //            GroupRepository.GetInstance().AddGroup(new Group
+            //            {
+            //                GroupId = 333,
+            //                GroupName = "New Group",
+            //                NumberOfUsers = 12
+            //            });
+            //
+            //            Console.WriteLine("Get groups was called: " + groups.Count());
+
 
             //            Console.WriteLine(GroupRepository.GetInstance().GetGroup(333));    
 

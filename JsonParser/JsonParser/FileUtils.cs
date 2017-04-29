@@ -16,7 +16,7 @@ namespace JsonParser
 
             try
             {
-                using (StreamReader sr = new StreamReader("../groupstest.txt"))
+                using (StreamReader sr = new StreamReader("../groups.txt"))
                 {
                     string line = sr.ReadToEnd();
 
@@ -51,7 +51,7 @@ namespace JsonParser
         {
             try
             {
-                using (StreamWriter file = new StreamWriter("../groupstest.txt", false))
+                using (StreamWriter file = new StreamWriter("../groups.txt", false))
                 {
                     //file.WriteLine(groupColection);
                     string output = "{ \"groups\" : " + JsonConvert.SerializeObject(groupColection) + " }";
@@ -74,7 +74,7 @@ namespace JsonParser
 
             try
             {
-                using (StreamReader sr = new StreamReader("../userstest.txt"))
+                using (StreamReader sr = new StreamReader("../users.txt"))
                 {
                     string line = sr.ReadToEnd();
 
@@ -109,7 +109,7 @@ namespace JsonParser
 
             try
             {
-                using (StreamWriter file = new StreamWriter("../userstest.txt", false))
+                using (StreamWriter file = new StreamWriter("../users.txt", false))
                 {
                     //file.WriteLine(groupColection);
                     string output = "{  \"users\" : " + JsonConvert.SerializeObject(userColection) + " }";

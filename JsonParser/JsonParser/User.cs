@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace JsonParser
 {
@@ -38,19 +34,5 @@ namespace JsonParser
 
             return str;
         }    
-
-//
-//        public bool updateUser()
-//        {
-//            //TODO: add prototype realise
-//            return true;
-//        }
-//
     }
-//
-//    class UserWrapper 
-//    {
-//        [JsonProperty(PropertyName = "users")]
-//        public List<User> UserCollection { get; set; }
-//    }
 }

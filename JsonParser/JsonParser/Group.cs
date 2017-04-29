@@ -19,10 +19,4 @@ namespace JsonParser
                    + "\nCOUNT: " + NumberOfUsers;
         }
     }
-//
-//    class GroupWrapper
-//    {
-//        [JsonProperty(PropertyName = "groups")]
-//        public IEnumerable<Group> Groups { get; set; }
-//    }
 }

@@ -47,24 +47,21 @@ namespace JsonParser
 
 
         //todo use JObject to convrt to json
-        public static void SaveGroups(IEnumerable<Group> groupColection)
+        public static void SaveGroups(string newGroupFile)
         {
             try
             {
-                using (StreamWriter file = new StreamWriter("../groups.txt", false))
+                using (StreamWriter file = new StreamWriter("../groups1.txt", true))
                 {
-                    //file.WriteLine(groupColection);
-                    string output = "{ \"groups\" : " + JsonConvert.SerializeObject(groupColection) + " }";
-                    file.WriteLine(output);
+                    file.WriteLine(newGroupFile);
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
                 throw;
-            }
+            }                        
         }
-
 
 
         //Users
@@ -104,53 +101,42 @@ namespace JsonParser
         }
 
 
-        public static void saveUsers(IEnumerable<User> userColection)
-        {
-
-            try
-            {
-                using (StreamWriter file = new StreamWriter("../users.txt", false))
-                {
-                    //file.WriteLine(groupColection);
-                    string output = "{  \"users\" : " + JsonConvert.SerializeObject(userColection) + " }";
-                    file.WriteLine(output);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
-
-        }
+//        public void saveUsers(string newUserFile)
+//        {
+//
+//            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Public\TestFolder\WriteLines2.txt", true))
+//            {
+//                file.WriteLine(newUserFile);
+//            }
+//
+//        }
 
 
-
-        //        //Checking for json in string
-        //        private bool IsValidJson(string strInput)
-        //        {
-        //            strInput = strInput.Trim();
-        //            if ((strInput.StartsWith("{") && strInput.EndsWith("}")) || 
-        //                (strInput.StartsWith("[") && strInput.EndsWith("]"))) 
-        //            {
-        //                try
-        //                {
-        //                    var obj = JToken.Parse(strInput);
-        //                    return true;
-        //                }
-        //                catch (JsonReaderException jex)
-        //                {
-        //                    return false;
-        //                }
-        //                catch (Exception ex) 
-        //                {
-        //                    return false;
-        //                }
-        //            }
-        //            else
-        //            {
-        //                return false;
-        //            }
-        //        }
+//        //Checking for json in string
+//        private bool IsValidJson(string strInput)
+//        {
+//            strInput = strInput.Trim();
+//            if ((strInput.StartsWith("{") && strInput.EndsWith("}")) || 
+//                (strInput.StartsWith("[") && strInput.EndsWith("]"))) 
+//            {
+//                try
+//                {
+//                    var obj = JToken.Parse(strInput);
+//                    return true;
+//                }
+//                catch (JsonReaderException jex)
+//                {
+//                    return false;
+//                }
+//                catch (Exception ex) 
+//                {
+//                    return false;
+//                }
+//            }
+//            else
+//            {
+//                return false;
+//            }
+//        }
     }
 }

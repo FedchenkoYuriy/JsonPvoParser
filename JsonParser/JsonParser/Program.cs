@@ -38,10 +38,6 @@ namespace JsonParser
                 Console.WriteLine("Users: " + user);
             }
 
-            FileUtils.saveUsers(users);
-            var groups = GroupRepository.GetInstance().GetGroups();
-            FileUtils.SaveGroups(groups);
-
             
             //            var groups = GroupRepository.GetInstance().GetGroups();
             //

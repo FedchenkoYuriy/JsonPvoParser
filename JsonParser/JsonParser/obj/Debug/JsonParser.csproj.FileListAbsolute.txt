@@ -27,14 +27,3 @@ D:\GITREPO\jsonparser\JsonPvoParser\JsonPvoParser\JsonParser\JsonParser\bin\Debu
 D:\GITREPO\jsonparser\JsonPvoParser\JsonPvoParser\JsonParser\JsonParser\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
 D:\GITREPO\jsonparser\JsonPvoParser\JsonPvoParser\JsonParser\JsonParser\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
 D:\GITREPO\jsonparser\JsonPvoParser\JsonPvoParser\JsonParser\JsonParser\obj\Debug\JsonParser.csprojResolveAssemblyReference.cache
-C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\System.Windows.Interactivity.dll
-C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\System.Windows.Interactivity.xml
-C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\de\System.Windows.Interactivity.resources.dll
-C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\en\System.Windows.Interactivity.resources.dll
-C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\es\System.Windows.Interactivity.resources.dll
-C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\it\System.Windows.Interactivity.resources.dll
-C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll

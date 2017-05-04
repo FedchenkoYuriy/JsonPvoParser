@@ -10,32 +10,32 @@ namespace JsonParser
         private static object _syncRoot = new Object();
         private static Dictionary<int, User> _users;
 
-        private UserRepository()
+        private UserRepository(string path)
         {
             _users = new Dictionary<int, User>();
-            LoadUsers();
+            LoadUsers(path);
         }
 
-        public static UserRepository GetInstance()
+        public static UserRepository GetInstance(string path)
         {
             if (_instance == null)
             {
                 lock (_syncRoot)
                 {
                     if (_instance == null)
-                        _instance = new UserRepository();
+                        _instance = new UserRepository(path);
                 }
             }
             return _instance;
         }
 
-        private void LoadUsers()
+        private void LoadUsers(string path)
         {
             if (_users.Count == 0)
             {
                 try
                 {
-                    foreach (var user in FileUtils.ReadUsers())
+                    foreach (var user in FileUtils.ReadUsers(path))
                     {
                         _users.Add(user.UserId, user);
                     }

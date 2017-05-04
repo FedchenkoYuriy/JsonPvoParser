@@ -13,14 +13,14 @@ namespace JsonParser
         static void Main(string[] args)
         {
 
-            var users = UserRepository.GetInstance().GetUsers();
+            var users = UserRepository.GetInstance("Path here").GetUsers();
 /**
             foreach (var user in users)
             {
                 Console.WriteLine("Users: " + user);
             }
     **/
-            UserRepository.GetInstance().UpdateUser(new User
+            UserRepository.GetInstance("Path here").UpdateUser(new User
             {
                 UserId = 1001,
                 FirstName = "update 1",

@@ -10,14 +10,14 @@ namespace JsonParser
         private static object _syncRoot;
         private static Dictionary<int, Group> _groups;              
 
-        private GroupRepository()
+        private GroupRepository(string path)
         {
             _groups = new Dictionary<int, Group>();
-            LoadGroups();
+            LoadGroups(path);
         }
 
 
-        public static GroupRepository GetInstance()
+        public static GroupRepository GetInstance(string path)
         {
             _syncRoot = new object();
 
@@ -26,19 +26,19 @@ namespace JsonParser
                 lock (_syncRoot)
                 {
                     if (_instace == null)
-                        _instace = new GroupRepository();
+                        _instace = new GroupRepository(path);
                 }
             }
             return _instace;
         }
 
-        private void LoadGroups()
+        private void LoadGroups(string path)
         {
             if (_groups.Count == 0)
             {                                
                 try
                 {                    
-                    foreach (var group in FileUtils.ReadGroups())
+                    foreach (var group in FileUtils.ReadGroups(path))
                     {                        
                         _groups.Add(group.GroupId, group);
                     }

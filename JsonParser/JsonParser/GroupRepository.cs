@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace JsonParser
 {
-    class GroupRepository : IGroupRepository
+    public class GroupRepository : IGroupRepository
     {
         private static GroupRepository _instace;
         private static object _syncRoot;

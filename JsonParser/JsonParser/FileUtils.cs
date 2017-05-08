@@ -13,6 +13,7 @@ namespace JsonParser
         {
             try
             {
+                //TODO Решить какой формат использовать (со : не разрешает создавать имена файлов)
                 string dateFormat = date.ToString("_dd.MM.yyyy H-mm-ss ");
                 try
                 {
@@ -32,13 +33,14 @@ namespace JsonParser
                     Console.WriteLine(e.ToString());
                     throw;
                 }
-                string[] fileEntries = Directory.GetFiles(path);
-                Array.Sort(fileEntries, StringComparer.InvariantCulture);
-                if(fileEntries.Length == 6)
-                {
-                    File.Delete(fileEntries[0]);
-                    File.Delete(fileEntries[3]);
-                }
+                //TODO Realize backup system
+                //string[] fileEntries = Directory.GetFiles(path);
+                //Array.Sort(fileEntries, StringComparer.InvariantCulture);
+                //if(fileEntries.Length == 6)
+                //{
+                //    File.Delete(fileEntries[0]);
+                //    File.Delete(fileEntries[3]);
+                //}
 
             }
             catch (Exception e)

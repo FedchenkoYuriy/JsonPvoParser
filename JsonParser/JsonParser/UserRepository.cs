@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace JsonParser
 {
-    class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository
     {
         private static UserRepository _instance;
         private static object _syncRoot = new Object();

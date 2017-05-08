@@ -1,34 +1,34 @@
-﻿{
+{
     "groups" : [
          {
               "gid" : 123,
-              "name" : "group name",
-              "members_count" : 240
+              "name" : "group name 1",
+              "members_count" : 242
          },
          {
-              "gid" : 123,
-              "name" : "group name",
-              "members_count" : 240
+              "gid" : 1234,
+              "name" : "group name 2",
+              "members_count" : 2405
          },
          {
-              "gid" : 123,
-              "name" : "group name",
-              "members_count" : 240
+              "gid" : 1235,
+              "name" : "group name 3",
+              "members_count" : 2404
          },
          {
-              "gid" : 123,
-              "name" : "group name",
-              "members_count" : 240
+              "gid" : 1236,
+              "name" : "group name 4",
+              "members_count" : 24012
          },
          {
-              "gid" : 123,
-              "name" : "group name",
-              "members_count" : 240
+              "gid" : 1237,
+              "name" : "group name 5",
+              "members_count" : 24120
          },
          {
-              "gid" : 123,
-              "name" : "group name",
-              "members_count" : 240
+              "gid" : 1238,
+              "name" : "group name 6",
+              "members_count" : 2
          }
     ]
 }

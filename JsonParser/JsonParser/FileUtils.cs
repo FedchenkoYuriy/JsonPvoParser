@@ -3,12 +3,52 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
-
+using System.Linq;
 
 namespace JsonParser
 {
     public static class FileUtils
     {
+        public static void Save(IEnumerable<Group> groupColection, IEnumerable<User> userColection, string path, DateTime date)
+        {
+            try
+            {
+                string dateFormat = date.ToString("_dd.MM.yyyy H-mm-ss ");
+                try
+                {
+                    SaveGroups(groupColection, path, dateFormat);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                    throw;
+                }
+                try
+                {
+                    SaveUsers(userColection, path, dateFormat);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                    throw;
+                }
+                string[] fileEntries = Directory.GetFiles(path);
+                Array.Sort(fileEntries, StringComparer.InvariantCulture);
+                if(fileEntries.Length == 6)
+                {
+                    File.Delete(fileEntries[0]);
+                    File.Delete(fileEntries[3]);
+                }
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
+        }
+
+
         //Groups
         public static IEnumerable<Group> ReadGroups(string path)
         {
@@ -29,6 +69,7 @@ namespace JsonParser
                         {
                             groups.Add(JsonConvert.DeserializeObject<Group>(group.ToString()));
                         }
+
                     }
                     catch (Exception e)
                     {
@@ -36,6 +77,7 @@ namespace JsonParser
                         throw;
                     }                                               
                 }
+
             }
             catch (Exception e)
             {
@@ -47,11 +89,11 @@ namespace JsonParser
 
 
         //todo use JObject to convrt to json
-        public static void SaveGroups(IEnumerable<Group> groupColection, string path)
+        public static void SaveGroups(IEnumerable<Group> groupColection, string path, string dateFormat)
         {
             try
             {
-                using (StreamWriter file = new StreamWriter(path, false))
+                using (StreamWriter file = new StreamWriter(path + "groups" + dateFormat + ".txt", false))
                 {
                     //file.WriteLine(groupColection);
                     string output = "{ \"groups\" : " + JsonConvert.SerializeObject(groupColection) + " }";
@@ -101,12 +143,12 @@ namespace JsonParser
             return users;
         }
 
-        public static void saveUsers(IEnumerable<User> userColection, string path)
+        public static void SaveUsers(IEnumerable<User> userColection, string path, string dateFormat)
         {
 
             try
             {
-                using (StreamWriter file = new StreamWriter(path, false))
+                using (StreamWriter file = new StreamWriter(path +"users"+ dateFormat + ".txt", false))
                 {
                     //file.WriteLine(groupColection);
                     string output = "{  \"users\" : " + JsonConvert.SerializeObject(userColection) + " }";

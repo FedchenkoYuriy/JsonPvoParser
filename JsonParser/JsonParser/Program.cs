@@ -12,15 +12,17 @@ namespace JsonParser
     {
         static void Main(string[] args)
         {
-
-            var users = UserRepository.GetInstance("Path here").GetUsers();
+            string savePaht = @"C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\bin\";
+            string userPaht = @"C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\users.txt";
+            string grouprPaht = @"C:\Users\user\Source\Repos\JsonPvoParser\JsonParser\JsonParser\groups.txt";
+            var users = UserRepository.GetInstance(userPaht).GetUsers();
 /**
             foreach (var user in users)
             {
                 Console.WriteLine("Users: " + user);
             }
     **/
-            UserRepository.GetInstance("Path here").UpdateUser(new User
+            UserRepository.GetInstance(userPaht).UpdateUser(new User
             {
                 UserId = 1001,
                 FirstName = "update 1",
@@ -38,8 +40,9 @@ namespace JsonParser
                 Console.WriteLine("Users: " + user);
             }
 
-            
-            //            var groups = GroupRepository.GetInstance().GetGroups();
+
+
+                        var groups = GroupRepository.GetInstance(grouprPaht).GetGroups();
             //
             //            Console.WriteLine("Get groups was called: " + groups.Count());
             //
@@ -63,8 +66,7 @@ namespace JsonParser
             //Console.WriteLine("Get Users was called: " + sortedUsers.Count());
             //Console.WriteLine(UserRepository.GetInstance().GetUser(3));
 
-
-            //            FileUtils file = new FileUtils();
+            FileUtils.Save(groups, users, savePaht, DateTime.Now);
             //var groups = file.ReadGroups();
             //Console.WriteLine(test);
             //var groups = JsonConvert.DeserializeObject<GroupWrapper>(test);

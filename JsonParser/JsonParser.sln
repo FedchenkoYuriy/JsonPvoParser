@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonParser", "JsonParser\JsonParser.csproj", "{B43177FD-3632-4450-8364-93D2A1961FBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTutorialSamples.Dialogs", "..\..\..\..\Documents\Visual Studio 2015\Projects\WPFFileDialog\WPFFileDialog\WpfTutorialSamples.Dialogs.csproj", "{D001AFB7-754F-4FD2-90B0-82E1A086B7D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication1", "WpfApplication1\WpfApplication1.csproj", "{E2C844FA-52F9-42A2-AA88-C29E938BB64F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{B43177FD-3632-4450-8364-93D2A1961FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B43177FD-3632-4450-8364-93D2A1961FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B43177FD-3632-4450-8364-93D2A1961FBD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D001AFB7-754F-4FD2-90B0-82E1A086B7D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D001AFB7-754F-4FD2-90B0-82E1A086B7D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D001AFB7-754F-4FD2-90B0-82E1A086B7D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D001AFB7-754F-4FD2-90B0-82E1A086B7D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2C844FA-52F9-42A2-AA88-C29E938BB64F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2C844FA-52F9-42A2-AA88-C29E938BB64F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2C844FA-52F9-42A2-AA88-C29E938BB64F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2C844FA-52F9-42A2-AA88-C29E938BB64F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

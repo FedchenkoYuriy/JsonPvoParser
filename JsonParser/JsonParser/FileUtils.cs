@@ -34,13 +34,13 @@ namespace JsonParser
                     throw;
                 }
                 //TODO Realize backup system
-                //string[] fileEntries = Directory.GetFiles(path);
-                //Array.Sort(fileEntries, StringComparer.InvariantCulture);
-                //if(fileEntries.Length == 6)
-                //{
-                //    File.Delete(fileEntries[0]);
-                //    File.Delete(fileEntries[3]);
-                //}
+                string[] fileEntries = Directory.GetFiles(path);
+                Array.Sort(fileEntries, StringComparer.InvariantCulture);
+                if(fileEntries.Length == 6)
+                {
+                    File.Delete(fileEntries[0]);
+                    File.Delete(fileEntries[3]);
+                }
 
             }
             catch (Exception e)

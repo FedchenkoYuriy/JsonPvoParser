@@ -55,7 +55,7 @@ namespace WpfApplication1
         }
         protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
         {
-            //Сохранение и удаление ненужных бэкапов по закрытии (дореализовать)
+            //Сохранение и удаление ненужных бэкапов по закрытии (!!! Проверить что бы в папке были только нужные файлы !!!)
             FileUtils.Save(groups, users, directoryPath, DateTime.Now);
 
             base.OnClosing(e);

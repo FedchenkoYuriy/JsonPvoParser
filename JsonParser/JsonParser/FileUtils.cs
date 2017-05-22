@@ -34,12 +34,17 @@ namespace JsonParser
                     throw;
                 }
                 //TODO Realize backup system
-                string[] fileEntries = Directory.GetFiles(path);
-                Array.Sort(fileEntries, StringComparer.InvariantCulture);
-                if(fileEntries.Length == 6)
+                string[] groupsFileEntries = Directory.GetFiles(path,"groups*");
+                Array.Sort(groupsFileEntries, StringComparer.InvariantCulture);
+                for (int i=0; i< groupsFileEntries.Length-1; i++ )
                 {
-                    File.Delete(fileEntries[0]);
-                    File.Delete(fileEntries[3]);
+                    File.Delete(groupsFileEntries[i]);
+                }
+                string[] usersFileEntries = Directory.GetFiles(path, "users*");
+                Array.Sort(usersFileEntries, StringComparer.InvariantCulture);
+                for (int i = 0; i < usersFileEntries.Length - 1; i++)
+                {
+                    File.Delete(usersFileEntries[i]);
                 }
 
             }
